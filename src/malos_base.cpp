@@ -65,7 +65,8 @@ void MalosBase::ConfigThread() {
   // derived classes.
   while (true) {
     if (zmq_pull_config_->Poll(ZmqPuller::WAIT_FOREVER)) {
-      std::lock_guard<std::mutex> lock(config_mutex_);
+      //TODO (nelson.castillo@admobilize.com): Fix mutex related bug
+      //std::lock_guard<std::mutex> lock(config_mutex_);
       DriverConfig config;
       // Can we parse a configuration?
       if (!config.ParseFromString(zmq_pull_config_->Read())) {
