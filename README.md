@@ -322,10 +322,8 @@ updateSocket.on('message', function(buffer) {
 // ********** End updates
 ```
 
-
 ##### Available Protobufs
 ```
 driver.proto // drivers
 hal.proto // sensors & controllers
 ```
-
